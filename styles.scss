@@ -1,0 +1,203 @@
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+    @media (prefers-reduced-motion) {
+        .animated {
+            -webkit-animation: unset !important;
+            animation: unset !important;
+            -webkit-transition: none !important;
+            transition: none !important;
+        }
+    }
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+* {
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #676767;
+}
+
+h2 {
+    font-weight: 100;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 13px;
+    margin: 15px auto;
+}
+
+.doing {
+    transform: rotate(-35deg);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -90px;
+    margin-top: 25px;
+    text-align: center;
+    background-color: #15748b;
+    width: 300px;
+    color: #fff;
+    padding: 5px 0px;
+}
+
+.will-fadeIn {
+    display: block;
+    width: 100%;
+    max-width: 75%;
+    margin: 20px auto;
+    height: 185px;
+    background-color: #b7f7f7;
+    padding: 10px;
+    &:nth-child(odd) {
+        background: #ffeded;
+    }
+    &:first-child {
+        height: auto;
+        background-color: #edffff;
+    }
+}
+
+.fadeInRight {
+    @include animation("fadeInRight .5s ease .4s both");
+}
+
+.fadeInLeft {
+    @include animation("fadeInLeft .5s ease .4s both");
+}
+
+@include keyframes(fadeInRight) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(100%, 0, 0));
+    }
+
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+
+@include keyframes(fadeInLeft) {
+    from {
+        opacity: 0;
+        @include transform(translate3d(-100%, 0, 0));
+    }
+
+    to {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+    }
+}
+
+/*************SCSS BY OP*************/
+
+.logo-container {
+    width: 500px;
+    margin: 0 auto;
+    z-index: 1000;
+    .img-box {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 100px;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    h2 {
+        color: white;
+        margin: 0;
+        font-style: italic;
+    }
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3 {
+        span {
+            font-weight: 400;
+            font-size: 2rem;
+        }
+        color: white;
+        text-shadow: none;
+        font-size: 3.5rem;
+        font-weight: 900;
+    }
+}
+
+#gasolina {
+    background-image: url("./assets/gasolina.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card-btn {
+    position: absolute;
+    right: 20px;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+#diesel {
+    @extend #gasolina;
+    background-image: url("./assets/diesel.png");
+}
+
+#borda {
+    @extend #gasolina;
+    background-image: url("./assets/fuera\ de\ borda.png");
+}
+
+#motocicletas {
+    @extend #gasolina;
+    background-image: url("./assets/motocicletas.png");
+}
+
+#transmisiones {
+    @extend #gasolina;
+    background-image: url("./assets/transmisiones.png");
+}
+
+#industriales {
+    @extend #gasolina;
+    background-image: url("./assets/industriales.png");
+}

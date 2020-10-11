@@ -1,0 +1,220 @@
+* {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #676767;
+}
+
+h2 {
+  font-weight: 100;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 13px;
+  margin: 15px auto;
+}
+
+.doing {
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -90px;
+  margin-top: 25px;
+  text-align: center;
+  background-color: #15748b;
+  width: 300px;
+  color: #fff;
+  padding: 5px 0px;
+}
+
+.will-fadeIn {
+  display: block;
+  width: 100%;
+  max-width: 75%;
+  margin: 20px auto;
+  height: 185px;
+  background-color: #b7f7f7;
+  padding: 10px;
+}
+
+.will-fadeIn:nth-child(odd) {
+  background: #ffeded;
+}
+
+.will-fadeIn:first-child {
+  height: auto;
+  background-color: #edffff;
+}
+
+.fadeInRight {
+  -webkit-animation: fadeInRight .5s ease .4s both;
+  animation: fadeInRight .5s ease .4s both;
+}
+
+@media (prefers-reduced-motion) {
+  .fadeInRight .animated {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation: fadeInLeft .5s ease .4s both;
+  animation: fadeInLeft .5s ease .4s both;
+}
+
+@media (prefers-reduced-motion) {
+  .fadeInLeft .animated {
+    -webkit-animation: unset !important;
+    animation: unset !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*************SCSS BY OP*************/
+.logo-container {
+  width: 500px;
+  margin: 0 auto;
+  z-index: 1000;
+}
+
+.logo-container .img-box {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.logo-container .img-box img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo-container h2 {
+  color: white;
+  margin: 0;
+  font-style: italic;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card h3 {
+  color: white;
+  text-shadow: none;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.card h3 span {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+#gasolina, #diesel, #borda, #motocicletas, #transmisiones, #industriales {
+  background-image: url("./assets/gasolina.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-btn {
+  position: absolute;
+  right: 20px;
+}
+
+.card-btn img {
+  max-width: 100%;
+  height: auto;
+}
+
+#diesel {
+  background-image: url("./assets/diesel.png");
+}
+
+#borda {
+  background-image: url("./assets/fuera de borda.png");
+}
+
+#motocicletas {
+  background-image: url("./assets/motocicletas.png");
+}
+
+#transmisiones {
+  background-image: url("./assets/transmisiones.png");
+}
+
+#industriales {
+  background-image: url("./assets/industriales.png");
+}
+/*# sourceMappingURL=styles.css.map */
