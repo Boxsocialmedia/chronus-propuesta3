@@ -43,6 +43,7 @@ p {
   height: 185px;
   background-color: #b7f7f7;
   padding: 10px;
+  display: inline-block;
 }
 
 .will-fadeIn:nth-child(odd) {
@@ -158,7 +159,7 @@ p {
   font-style: italic;
 }
 
-.card {
+.card, #gasolina .card-bg, #diesel .card-bg, #borda .card-bg, #motocicletas .card-bg, #transmisiones .card-bg, #industriales .card-bg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,29 +169,63 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0;
 }
 
-.card h3 {
+.card h3, #gasolina .card-bg h3, #diesel .card-bg h3, #borda .card-bg h3, #motocicletas .card-bg h3, #transmisiones .card-bg h3, #industriales .card-bg h3 {
+  position: absolute;
   color: white;
   text-shadow: none;
   font-size: 3.5rem;
   font-weight: 900;
 }
 
-.card h3 span {
+.card h3 span, #gasolina .card-bg h3 span, #diesel .card-bg h3 span, #borda .card-bg h3 span, #motocicletas .card-bg h3 span, #transmisiones .card-bg h3 span, #industriales .card-bg h3 span {
   font-weight: 400;
   font-size: 2rem;
 }
 
 #gasolina, #diesel, #borda, #motocicletas, #transmisiones, #industriales {
-  background-image: url("./assets/gasolina.png");
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#gasolina:hover .card-bg, #diesel:hover .card-bg, #borda:hover .card-bg, #motocicletas:hover .card-bg, #transmisiones:hover .card-bg, #industriales:hover .card-bg {
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#gasolina:hover .card-bg::before, #diesel:hover .card-bg::before, #borda:hover .card-bg::before, #motocicletas:hover .card-bg::before, #transmisiones:hover .card-bg::before, #industriales:hover .card-bg::before {
+  display: block;
+}
+
+#gasolina .card-bg, #diesel .card-bg, #borda .card-bg, #motocicletas .card-bg, #transmisiones .card-bg, #industriales .card-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url("./assets/gasolina.png");
+  background-size: cover;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+}
+
+.card-bg::before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.333);
 }
 
 .card-btn {
   position: absolute;
-  right: 20px;
+  right: 30px;
+  width: 45px;
 }
 
 .card-btn img {
@@ -198,23 +233,23 @@ p {
   height: auto;
 }
 
-#diesel {
+#diesel .card-bg {
   background-image: url("./assets/diesel.png");
 }
 
-#borda {
+#borda .card-bg {
   background-image: url("./assets/fuera de borda.png");
 }
 
-#motocicletas {
+#motocicletas .card-bg {
   background-image: url("./assets/motocicletas.png");
 }
 
-#transmisiones {
+#transmisiones .card-bg {
   background-image: url("./assets/transmisiones.png");
 }
 
-#industriales {
+#industriales .card-bg {
   background-image: url("./assets/industriales.png");
 }
 /*# sourceMappingURL=styles.css.map */
