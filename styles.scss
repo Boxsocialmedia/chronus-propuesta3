@@ -126,6 +126,34 @@ p {
 
 /*************SCSS BY OP*************/
 
+header {
+    position: absolute;
+    width: 100%;
+    top: 25px;
+    left: 30px;
+
+    z-index: 100;
+    // animation-name: aparece-header;
+    // animation-duration: 1000ms;
+    // animation-fill-mode: forwards;
+    // animation-timing-function: linear;
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            margin: 0 10px;
+            font-family: "Poppins", sans-serif;
+            a {
+                text-decoration: none;
+                color: white;
+                font-style: italic;
+            }
+        }
+    }
+}
+
 .logo-container {
     width: 500px;
     margin: 0 auto;
