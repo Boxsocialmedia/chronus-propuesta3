@@ -41,3 +41,14 @@ function addFadeIn(repeat) {
         }
     });
 }
+
+window.addEventListener("scroll", function () {
+    const scrollElement = document.getElementsByClassName("mouse-position")[0];
+    if (window.pageYOffset > "5") {
+        // scrollElement.style.transitionDuration = "500ms";
+        // scrollElement.style.transitionTimingFunction = "ease";
+        scrollElement.style.opacity = "0";
+    } else {
+        scrollElement.style.opacity = "1";
+    }
+});

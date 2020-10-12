@@ -7,6 +7,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: #676767;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -183,6 +184,7 @@ header ul li a {
   color: white;
   margin: 0;
   font-style: italic;
+  font-weight: bold;
 }
 
 .card, #gasolina .card-bg, #diesel .card-bg, #borda .card-bg, #motocicletas .card-bg, #transmisiones .card-bg, #industriales .card-bg {
@@ -277,5 +279,104 @@ header ul li a {
 
 #industriales .card-bg {
   background-image: url("./assets/industriales.png");
+}
+
+/********SCROLL ANIMATION**********/
+.mouse-position {
+  position: absolute;
+  display: block;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  right: 3%;
+  top: 28%;
+  margin: 50px 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+/* END: PEN STYLES */
+/*
+  Animated Mouse Scroll Button (v1.0)
+  By Sam Jakob Mearns (https://www.samjakob.com/)
+  */
+.mouse-container {
+  display: block;
+  text-align: center;
+}
+
+.mouse-container .mouse-outer {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 35px;
+  border: 2px solid white;
+  border-radius: 60px;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.mouse-container .mouse-outer .mouse-wheel {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -2.91667px;
+  height: 15px;
+  width: 6px;
+  background-color: white;
+  border-radius: 6px;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  -webkit-animation: scroll 1.4s infinite linear;
+  animation: scroll 1.4s infinite linear;
+}
+
+.mouse-container .mouse-outer:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.mouse-container .mouse-outer:hover .mouse-wheel {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    -webkit-transform: scaleY(0.5) translateY(0);
+            transform: scaleY(0.5) translateY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1) translateY(7.5px);
+            transform: scaleY(1) translateY(7.5px);
+  }
+  60% {
+    -webkit-transform: scaleY(0.5) translateY(15px);
+            transform: scaleY(0.5) translateY(15px);
+  }
+  to {
+    -webkit-transform: scaleY(0.5) translateY(0);
+            transform: scaleY(0.5) translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    -webkit-transform: scaleY(0.5) translateY(0);
+            transform: scaleY(0.5) translateY(0);
+  }
+  20% {
+    -webkit-transform: scaleY(1) translateY(7.5px);
+            transform: scaleY(1) translateY(7.5px);
+  }
+  60% {
+    -webkit-transform: scaleY(0.5) translateY(15px);
+            transform: scaleY(0.5) translateY(15px);
+  }
+  to {
+    -webkit-transform: scaleY(0.5) translateY(0);
+            transform: scaleY(0.5) translateY(0);
+  }
 }
 /*# sourceMappingURL=styles.css.map */
